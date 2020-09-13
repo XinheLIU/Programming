@@ -4,6 +4,7 @@
   - [SQL Language](#sql-language)
     - [SQL \(SQLite\) data types](#sql-sqlite-data-types)
     - [COLUMN Attributes](#column-attributes)
+  - [How to Approach Data Query Problems](#how-to-approach-data-query-problems)
   - [Basic commands](#basic-commands)
     - [SELECT](#select)
     - [Comments](#comments)
@@ -32,23 +33,24 @@
 - widely used in database management system
   - each DBMS has own **dialect**
 - non-procedural lanaguage
+  - [SQL Execution](/sql-execution.md)
 - Key Concepts
-  - one-t0-many, many-to-many, one-to-one: "has" relationship
+  - one-to-many, many-to-many, one-to-one: "has" relationship
   - Primary key
   - Foreign key
 
 4 Core functions
 
-- Data Definition language
-- Data Manipulation language
-- Data Control language
+- [Data Definition language](/ddl.md)
+- [Data Manipulation language](/dml-dcl.md)
+- [Data Control language](/dml-dcl.md)
 - Data Query Lanaguage
 
 ### SQL \(SQLite\) data types
 
 - Integer
   - ENUM - fixed n types of class
-  - INT2, INT8, 
+  - INT2, INT8
   - INTEGER
   - BIGINT
   - UNSIGNED BIG INT
@@ -76,6 +78,17 @@
 - NOT NULL
 - FOREIGN KEY
 
+## How to Approach Data Query Problems
+
+1. What the final result looks like
+2. Where to pull data
+   1. Join
+   2. Aggregate
+   3. Donditions
+3. What calculations are needed
+   1. Calculates
+   2. Windows
+   3. Filter
 
 ## Basic commands
 
@@ -83,17 +96,17 @@
 
 SELECT \[DISTINCT\] &lt;columns&gt;
 
-- DISTINCT 
+- DISTINCT
   - returns only distinct values
-- FROM &lt;table&gt; 
-- WHERE &lt;predicate&gt; 
+- FROM &lt;table&gt;
+- WHERE &lt;predicate&gt;
   - &lt;predicate&gt; = &lt;col name&gt;  &lt;operator&gt; &lt;value&gt;
     - &lt;operators&gt;
       - = , &lt;&gt;, &gt;, &lt;, &gt;=\(!&lt;\), &lt;=\(!&gt;\)
       - BETWEEN
       - IS NULL
       - Logical
-        - AND &gt;= OR 
+        - AND &gt;= OR
         - NOT
         - IN
           - faster than "OR"
@@ -204,7 +217,7 @@ wildcards
 
   - **Window calculation*- created by PARTITION
 
-## Subqueries 
+## Subqueries
 
 SELECT ...FROM ...WHERE &lt;col&gt; in &lt;subquery&gt; \( SELECT...\) AS...
 
@@ -244,7 +257,7 @@ SQL has many standards, the mainstream ones are SQL92 and SQL99, 92 is simpler t
     - often use UNION ALL + condition
 - NATURAL JOIN
 - JOINS
-  - ![SQL Joins](/assets/SQLJoins.jpg)
+  - ![SQL Joins](/assets/SQLJoins.png)
 
 ## CASE Statement
 
@@ -330,10 +343,12 @@ SELECT @max_max_hp, @min_max_mp, @avg_max_attack;
 - UPPER, LOWER, UCASE
   
 Dates
+
 - each DBMS uses its own datatype
 - date plus timestamp could be tricky
   
 SQLite Date Time Functions
+
 - DATE
 - TIME
 - DATETIME

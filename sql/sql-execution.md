@@ -1,3 +1,5 @@
+# SQL Execution
+
 Using Oracle as example, several steps
 
 1. Grammar Check
@@ -12,10 +14,9 @@ Using Oracle as example, several steps
        ```
 
 5. Optimizer: use parse tree to parse the sentence
-
 6. Executor
 
-![](/assets/Oracle.png)
+![Oracle](/assets/Oracle.png)
 
 MySQL uses a layered system, SQL layer is decoupled from storage methods. Sentences are cached similarly
 
@@ -30,11 +31,11 @@ The common logic is: parser -&gt; Optimizer -&gt; Executor
 
 ![](/assets/MySQL.png)
 
-### Profile SQL
+## Profile SQL
 
 * use set profiling=1 to turn on profile
 
-### SELECT Sentence
+## SELECT Sentence Execution
 
 Sequence in
 
@@ -55,6 +56,3 @@ The **Complier** Read like
 * SELECT and DISTINCT to get data
   * wildcard is nor recommended in production
 * sort data, etc
-
-
-
