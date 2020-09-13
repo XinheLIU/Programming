@@ -33,7 +33,7 @@
 - widely used in database management system
   - each DBMS has own **dialect**
 - non-procedural lanaguage
-  - [SQL Execution](/sql-execution.md)
+  - [SQL Execution](./sql-execution.md)
 - Key Concepts
   - one-to-many, many-to-many, one-to-one: "has" relationship
   - Primary key
@@ -41,9 +41,9 @@
 
 4 Core functions
 
-- [Data Definition language](/ddl.md)
-- [Data Manipulation language](/dml-dcl.md)
-- [Data Control language](/dml-dcl.md)
+- [Data Definition language](./ddl.md)
+- [Data Manipulation language](./dml-dcl.md)
+- [Data Control language](./dml-dcl.md)
 - Data Query Lanaguage
 
 ### SQL \(SQLite\) data types

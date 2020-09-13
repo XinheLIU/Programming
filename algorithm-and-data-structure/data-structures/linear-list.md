@@ -15,7 +15,7 @@
 * Random Access O\(1\)
 * Insert/Delete O\(n\)
 
-### Implementation
+### Implementations
 
 #### Operations
 
@@ -65,11 +65,11 @@
 
 * Can find prev node in O\(1\)
 * Insert before in O\(1\)
-* [**LinkedHashMap**](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/LinkedHashMap.java) in Java
+* [LinkedHashMap](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/LinkedHashMap.java) in Java
 
 ##### Cyclical Linked List
 
-eg. [Joseph's problem](https://en.wikipedia.org/wiki/Josephus_problem)
+* [Joseph's problem](https://en.wikipedia.org/wiki/Josephus_problem)
 
 #### Compare with Array
 
@@ -85,7 +85,7 @@ eg. [Joseph's problem](https://en.wikipedia.org/wiki/Josephus_problem)
     * frequent Garbage Collection in Java
     * not friendly to cache, more memory pieces
 
-### Implementation
+### Implementations
 
 #### Operations
 
@@ -114,7 +114,7 @@ eg. [Joseph's problem](https://en.wikipedia.org/wiki/Josephus_problem)
 
 #### In Engineering
 
-* Cache Clear
+* [Cache Replacement](https://en.wikipedia.org/wiki/Cache_replacement_policies)
   * Least Frequently Used\(LFU\)
   * Least Recent Used\(LRU\)
   * FIFO
