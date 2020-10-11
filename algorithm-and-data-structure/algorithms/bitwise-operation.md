@@ -1,11 +1,13 @@
-### Basic Knowledge
+# [Bitwise Operations](https://en.wikipedia.org/wiki/Bitwise_operation)
 
-* how computer save negative numbers
-* auti-code: 1 as 0, 0 as 1 for negative numbers
-* complement code: anti-code + 1 for negative numbers
-* negative numbers stored as complement code
+## Basic Concepts
 
-### Common Operations
+- how computer save negative numbers
+- auti-code: 1 as 0, 0 as 1 for negative numbers
+- complement code: anti-code + 1 for negative numbers
+- negative numbers stored as complement code
+
+## Common Operations
 
 XOR
 
@@ -51,6 +53,3 @@ c ^= 32 # lower case to higher, higher to lower
 c |= 32 # to lower case
 c &= -33 # to higher case
 ```
-
-
-

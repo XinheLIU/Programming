@@ -1,4 +1,6 @@
-### Internal Sorting
+# Sorting
+
+## Internal Sorting
 
 * O\(n^2\)
   * Bubble Sort
@@ -28,11 +30,11 @@
     * Radix Sort
     * need knowledge about the sequence \(range\)
 
-### External Sorting
+## External Sorting
 
 Large object sorting finished in external storage
 
-# Questions
+## Sample Questions
 
 1. If index in internal memory and data in external memory, swap data is very expensive, which sort to use?
    1. Selection Sort
@@ -46,6 +48,3 @@ Large object sorting finished in external storage
    1. n\(n-1\)/2
 6. Optimize
    1. insertion sort - binary search
-
-
-

@@ -1,7 +1,15 @@
 
----
+# Searching Algorithms
 
-# Binary Search
+- [Searching Algorithms](#searching-algorithms)
+  - [Binary Search](#binary-search)
+    - [key points](#key-points)
+  - [Breath-First Search\(BFS\) and Depth-First-Search\(DFS\)](#breath-first-searchbfs-and-depth-first-searchdfs)
+    - [Double-direction BFS\(DBFS\) : expand from start point and end point](#double-direction-bfsdbfs--expand-from-start-point-and-end-point)
+  - [Depth-First Search(DFS)](#depth-first-searchdfs)
+    - [Heuristic Seach](#heuristic-seach)
+
+## Binary Search
 
 ```py
 # Template 1
@@ -42,7 +50,7 @@ else:
     return -1
 ```
 
-#### key points
+### key points
 
 * while loop condition
   * l &lt;= r: always return in the loop
@@ -54,25 +62,22 @@ else:
 
   * l + 1 &lt; r: use l = mid, r = mid
 
-#### Assumptions
+Assumptions
 
 * only works for array\(storage supports random access and consecutive\)
 * data is sorted
 * data is bounded\(usually\)
 
-### In Engineering
+Use In Engineering
 
 The existence of sorted data structures\(tree, hash tables\) with fast search make binary search become most useful in searching approximation values \(eg. first/last occurrence of a value/in a range\)
 
-* search location range of IP adrress
+- search location range of IP adrress
 
----
 
-# Breath-First Search\(BFS\) and Depth-First-Search\(DFS\)
+## Breath-First Search\(BFS\) and Depth-First-Search\(DFS\)
 
 Search on a graph
-
-## BFS
 
 ```py
 def BFS(graph, start, end):
@@ -92,10 +97,33 @@ def BFS(graph, start, end):
     # other processing work
 ```
 
-* Complete: can guarantee the solution to be found
-* Storage cost high
+- Complete: can guarantee the solution to be found
+- Storage cost high
 
-## DFS
+Imprmprovements
+
+### Double-direction BFS\(DBFS\) : expand from start point and end point
+
+  ```py
+  def BFS(graph, start, end):
+      front, back = [start],[end]
+      visited.add(start)
+
+      while front and back: 
+          # choose the short one to sarch
+          queue = front if len(front) < back else back
+
+          node = queue.pop() 
+          visited.add(node)
+
+          process(node) 
+          nodes = generate_related_nodes(node) 
+          queue.push(nodes)
+  ```
+
+* Preprocess and store
+
+## Depth-First Search(DFS)
 
 ```py
 # recursive
@@ -137,36 +165,13 @@ def DFS(self, tree):
 * Applicable to most any problems
 * storage cost low
 
-#### Application
+Applications
 
-* [ Flood Fill](https://en.wikipedia.org/wiki/Flood_fill)
+* [Flood Fill](https://en.wikipedia.org/wiki/Flood_fill)
 
-### Improvements
+Improvements
 
-#### BFS
-
-* Double-direction BFS\(DBFS\) : expand from start point and end point
-
-  ```py
-  def BFS(graph, start, end):
-      front, back = [start],[end]
-      visited.add(start)
-
-      while front and back: 
-          # choose the short one to sarch
-          queue = front if len(front) < back else back
-
-          node = queue.pop() 
-          visited.add(node)
-
-          process(node) 
-          nodes = generate_related_nodes(node) 
-          queue.push(nodes)
-  ```
-
-* Preprocess and store
-
-#### Heuristic Seach
+### Heuristic Seach
 
 A\* algorithm: use Priority Queue
 
@@ -187,6 +192,3 @@ def AstarSearch(graph, start, end):
 ```
 
 * key is [similarity measures](https://dataaspirant.com/2015/04/11/five-most-popular-similarity-measures-implementation-in-python/)
-
-
-

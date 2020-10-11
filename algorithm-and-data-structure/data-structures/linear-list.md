@@ -1,276 +1,262 @@
 # Linear List
 
+- [Linear List](#linear-list)
+  - [Array](#array)
+  - [Linked List](#linked-list)
+    - [Compare with Array](#compare-with-array)
+  - [Skip List](#skip-list)
+  - [Hash Table](#hash-table)
+    - [Hash Collision)](#hash-collision)
+  - [Stack](#stack)
+  - [Queue](#queue)
+  - [Bloom Filter](#bloom-filter)
+  - [Cache](#cache)
+
 ## Array
 
-### Features
+Features
 
-* continuous storage
-  * CPU cache friendly
-* fixed storage
-  * out of memory error \(C/C++ needs boundary check\)
-  * dynamic allocation is expansive
+- continuous storage
+  - CPU cache friendly
+- fixed storage
+  - out of memory error \(C/C++ needs boundary check\)
+  - dynamic allocation is expansive
 
-### Time Complexity
+Time Complexity
 
-* Random Access O\(1\)
-* Insert/Delete O\(n\)
+- Random Access O\(1\)
+- Insert/Delete O\(n\)
 
-### Implementations
+Implementation
 
-#### Operations
+Operations
 
-* Construct
-* Destruct/Clear
-* Insert
-* Append
-* Delete
-* Change
-* Sort
-* Search\(getPos, GetValue\)
-* Merge two sorted array
+- Construct
+- Destruct/Clear
+- Insert
+- Append
+- Delete
+- Change
+- Sort
+- Search\(getPos, GetValue\)
+- Merge two sorted array
 
-#### Container Implementation
+Container Implementations
 
-* **Dynamic Memory Allocation** could be slow
-* Encapsulate common operations
-* [ArrayList](http://developer.classpath.org/doc/java/util/ArrayList-source.html)\(Java\), vector\(C++\)
-  * Limit Checking
-  * Implement an array with dynamic storage
-  * implement a fixed memory array with dynamic insert and delete
-* Pros and Cons of usage
-  * different storage type
-    * Java ArrayList con only store _Integer, Long, not atomic types\(primitive types\) like \_int, long_
-  * performance
-    * **container is slower**
-      * auto-boxing, unboxing in Java
-
----
+- **Dynamic Memory Allocation** could be slow
+- Encapsulate common operations
+- [ArrayList](http://developer.classpath.org/doc/java/util/ArrayList-source.html)\(Java\), vector\(C++\)
+  - Limit Checking
+  - Implement an array with dynamic storage
+  - implement a fixed memory array with dynamic insert and delete
+- Pros and Cons of usage
+  - different storage type
+    - Java ArrayList con only store _Integer, Long, not atomic types\(primitive types\) like \_int, long_
+  - performance
+    - **container is slower**
+      - auto-boxing, unboxing in Java
 
 ## Linked List
 
 [LinkedList Example](http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/code/LinkedList.java)
 
-### Features
+Features
 
-#### Time Complexity
+Time Complexity
 
-##### Singly-linked List
+Singly-linked List
 
-* Prepend O\(1\)
-* Append O\(1\)
-* Lookup O\(n\)
-* Insert/Delete O\(1\)
+- Prepend O\(1\)
+- Append O\(1\)
+- Lookup O\(n\)
+- Insert/Delete O\(1\)
 
-##### Double Linked List
+Double Linked List
 
-* Can find prev node in O\(1\)
-* Insert before in O\(1\)
-* [LinkedHashMap](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/LinkedHashMap.java) in Java
+- Can find prev node in O\(1\)
+- Insert before in O\(1\)
+- [LinkedHashMap](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/LinkedHashMap.java) in Java
 
-##### Cyclical Linked List
+Cyclical Linked List
 
-* [Joseph's problem](https://en.wikipedia.org/wiki/Josephus_problem)
+- [Joseph's problem](https://en.wikipedia.org/wiki/Josephus_problem)
 
-#### Compare with Array
+Implementation
 
-* Pros
-  * Dynamic Memory Allocation easier, Array is easier to out of memory
-  * Can frequently insert in the middle
-  * Visibility and flexibility - do not require to know the size, building blocks for other data types
-  * Being able to model the linked based relationship directly. 
-* Cons
-  * Random Access is hard
-  * Array can take advantage of CPU Cache, be visited faster
-  * Hard memory management, more expensive in memory
-    * frequent Garbage Collection in Java
-    * not friendly to cache, more memory pieces
+Operations
 
-### Implementations
+- Search by index or value
+- Insert a node
+- Delete a node
+- Reverse Linked List
 
-#### Operations
+Common Techniques
 
-* Search by index or value
-* Insert a node
-* Delete a node
-* Reverse Linked List
+- **Boundary Condition** Handling careful
+  - head pointer, tail pointer to NULL, back to head for circular linked list
+  - empty list
+  - do not lose node
+- Use Prev/Dummy node to avoid special handling
+  - \(Use a **sentinel** for special situation handling\)
+- Special Situation Handling
+  - empty linked list
+  - one node
+  - two node
+  - head and tail
 
-#### Common Techniques
-
-* **Boundary Condition** Handling careful
-  * head pointer, tail pointer to NULL, back to head for circular linked list
-  * empty list
-  * do not lose node
-* Use Prev/Dummy node to avoid special handling
-  * \(Use a **sentinel** for special situation handling\)
-* Special Situation Handling
-  * empty linked list
-  * one node
-  * two node
-  * head and tail
-
-#### Container Implementation
+Container Implementations
 
 [Java](http://developer.classpath.org/doc/java/util/LinkedList-source.html)
 
-#### In Engineering
 
-* [Cache Replacement](https://en.wikipedia.org/wiki/Cache_replacement_policies)
-  * Least Frequently Used\(LFU\)
-  * Least Recent Used\(LRU\)
-  * FIFO
+Use In Engineering
 
----
+- [Cache Replacement](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+  - Least Frequently Used\(LFU\)
+  - Least Recent Used\(LRU\)
+  - FIFO
+
+### Compare with Array
+
+- Pros
+  - Dynamic Memory Allocation easier, Array is easier to out of memory
+  - Can frequently insert in the middle
+  - Visibility and flexibility - do not require to know the size, building blocks for other data types
+  - Being able to model the linked based relationship directly. 
+- Cons
+  - Random Access is hard
+  - Array can take advantage of CPU Cache, be visited faster
+  - Hard memory management, more expensive in memory
+    - frequent Garbage Collection in Java
+    - not friendly to cache, more memory pieces
+
 
 ## Skip List
 
 [Skip List](https://en.wikipedia.org/wiki/Skip_list)
 
-### Features
+Features
 
-#### Time Complexity
+Time Complexity
 
-* Search/Look up **O\(logn\)**
-* Insert/Delete O\(1\)
+- Search/Look up **O\(logn\)**
+- Insert/Delete O\(1\)
 
-### Implementation
-
-#### In Engineering
+Implementation
 
 [Redis](https://stackoverflow.com/questions/45115047/why-redis-sortedset-uses-skip-list-instead-of-balanced-tree)
 
----
 
-## Hash Table
+## [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
 
-### Concepts
-
-[Hash Table](https://en.wikipedia.org/wiki/Hash_table)
-
-Hash Collision
+### [Hash Collision](https://en.wikipedia.org/wiki/Collision_(computer_science))
 
 Collision resolution
 
-* open addressing 
-  * linear probing
-    * the problem of clustering
-  * quadratic probing
-* chainging
+- open addressing 
+  - linear probing
+    - the problem of clustering
+  - quadratic probing
+- chainging
 
-### Features
+Time Complexity
 
-#### Time Complexity
+- Search O\(1\)
+  - worst be O\(n\)
+  - Hash Collsion
+    - open hashing - use Linked list
+    - closed hashing
+    - other methods
+- Insertion/Deletion O\(1\)
+  - sometimes needs to allocate memory dynamically
 
-* Search O\(1\)
-  * worst be O\(n\)
-  * Hash Collsion
-    * open hashing - use Linked list
-    * closed hashing
-    * other methods
-* Insertion/Deletion O\(1\)
-  * sometimes needs to allocate memory dynamically
+Implementations
 
-### Implementation
+Set
 
-#### Set
+- [Java](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Set.html)
+  - Python
+  - C++
+    - unordered_set
 
-[Java](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Set.html)
+Map
 
-Python
-
-C++
-
-_unordered_\__set_
-
-#### Map
-
-[Java](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Map.html) 
-
-**Python**
-
-* dict
-* [collecitons](https://docs.python.org/2/library/collections.html)
-
-#### C++
-
-_unordered\_map_
+- [Java](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Map.html) 
+- Python
+  - dict
+  - [collecitons](https://docs.python.org/2/library/collections.html)
+- C++
+  - unordered\_map
 
 Set and Map might be implemented in non-linear forms\(Red-Black Tree, AVL Tree\)
 
-### In Engineering
+Use In Engineering
 
-* Associative array
-* Database indexing
-* cache 
-* set
-
----
+- Associative array
+- Database indexing
+- cache
+- set
 
 ## Stack
 
-### Features
-
 Last In First Out\(LIFO\) Array - Restricted Linear List
 
-#### Time Complexity
+Time Complexity
 
-* O\(1\) insert/delete
-* O\(n\) Access Search
+- O\(1\) insert/delete
+- O\(n\) Access Search
 
 Need dynamic allocation - push operation could become O\(n\) \(Average still O\(1\) \)
 
-### Implementation
+Implementation
 
 with array or with linked list
 
-#### Operations
+Operations
 
-* Push
-* Pop
-* peek
+- Push
+- Pop
+- peek
 
-#### Container Implementation
+Container Implementations
 
 In production, always choose **Deque **for both stack and queue
 
-[Java](http://fuseyism.com/classpath/doc/java/util/Queue-source.html)
+- [Java](http://fuseyism.com/classpath/doc/java/util/Queue-source.html)
+- [Python](https://docs.python.org/2/library/collections.html)
 
-[Python](https://docs.python.org/2/library/collections.html)
+Use In Engineering
 
-#### In Engineering
+- Browser, go back go forward
+- function call stack
+- Parser 
+  - expression calculate value
 
-* Browser, go back go forward
-* function call stack
-* Parser 
-  * expression calculate value
-
----
 
 ## Queue
 
-### Features
-
 First In First Out\(FIFO\) Array
 
-#### Time Complexity
+Time Complexity
 
-* O\(1\) insert/delete
-* O\(n\) Access/Search
+- O\(1\) insert/delete
+- O\(n\) Access/Search
 
-### Implementation
+Implementation
 
-* Sequence Queue-Array
-  * head and tail pointer
-* **Circular Queue**
-  * head = tail : empty
-  * \(tail + 1\)% n == head: full
-* Use Linked List or Array
+- Sequence Queue-Array
+  - head and tail pointer
+- **Circular Queue**
+  - head = tail : empty
+  - \(tail + 1\)% n == head: full
+- Use Linked List or Array
 
-#### Operations
+Operations
 
-* enqueue
-* dequeue
+- enqueue
+- dequeue
 
-#### Container Implementation
+Container Implementation
 
 In production, always choose **Deque **for both stack and queue
 
@@ -278,40 +264,38 @@ In production, always choose **Deque **for both stack and queue
 
 [Python](https://docs.python.org/2/library/collections.html)
 
-#### In Engineering
+Use In Engineering
 
 Widely used in system, middleware, and frameworks
 
-* Message Queue
-* High performance queue - Disruptor
-* Blocking Queue
-  * a consumer - producer model
-    * take will be blocked if empty
-* Concurrent Queue
-  * add lock on enqueue\(\), dequeue\(\) methods 
-  * performance - use array circular queue 
-    * CAS \(compare and set \) atomic operation
-* Examples
-  * Linux Cycle Memory
-  * Java Concurrent Parallel
-    * ArrayBlockingQueue
+- Message Queue
+- High performance queue - Disruptor
+- Blocking Queue
+  - a consumer - producer model
+    - take will be blocked if empty
+- Concurrent Queue
+  - add lock on enqueue\(\), dequeue\(\) methods 
+  - performance - use array circular queue 
+    - CAS \(compare and set \) atomic operation
+- Examples
+  - Linux Cycle Memory
+  - Java Concurrent Parallel
+    - ArrayBlockingQueue
 
----
-
-### Bloom Filter
+## Bloom Filter
 
 [Bloom Filter](https://en.wikipedia.org/wiki/Bloom_filter)
 
-* More space efficient than hashtable
-* in exchange of some false positive
-* no false negative
+- More space efficient than hashtable
+- in exchange of some false positive
+- no false negative
 
-#### In Engineering
+In Engineering
 
-* Email content recognition \(SPAM, content filter\)
-* Bitcoin Network
-* Mapreduce
-* Cache in Redis
+- Email content recognition \(SPAM, content filter\)
+- Bitcoin Network
+- Mapreduce
+- Cache in Redis
 
 ```py
 from bitarray import bitarray
@@ -334,23 +318,19 @@ def lookup(self, s):
         if self.bit_array[result] == 0: 
             return "Nope" 
     return "Probably"
-    
-[High Performance Bloom Filter]()
 ```
 
----
-
-### Cache
+## Cache
 
 [Cache Replacement Policies](https://en.wikipedia.org/wiki/Cache_replacement_policies)
 
 Usually implemented with linear structures combinations \(eg. Linked List + HashTable\), Common forms includes
 
-* FIFO, LIFO
-* LRU Cache
-* LFU Cache
-* Smart Caches
-  * eg. with Recommendation intelligence
+- FIFO, LIFO
+- LRU Cache
+- LFU Cache
+- Smart Caches
+  - eg. with Recommendation intelligence
 
 ```py
 class LRUCache(object): 
@@ -376,8 +356,3 @@ class LRUCache(object):
                 self.dic.popitem(last=False) 
         self.dic[key] = value
 ```
-
-
-
-
-

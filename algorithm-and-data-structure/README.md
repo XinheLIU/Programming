@@ -1,20 +1,22 @@
-# Contents
 
-* [Introduction](README.md)
-* [Overview](overview.md)
-* [Programming Interview Tips](programming-interview-tips.md)
-  * [C++](programming-interview-tips/c++.md)
-  * [Python](programming-interview-tips/python.md)
-* [Data Structures](data-structures.md)
-  * [Linear List](data-structures/linear-list.md)
-  * [String](data-structures/string.md)
-  * [Binary Tree](data-structures/binary-tree.md)
-  * [Tree](data-structures/tree.md)
-  * [Graph](data-structures/graph.md)
-* [Algorithms](algorithms.md)
-  * [Complexity Analysis](algorithms/complexity-analysis.md)
-  * [Algorithm Thinking](algorithms/algorithm-thoughts.md)
-  * [Searching Algorithms](algorithms/searching-algorithms.md)
-  * [Sorting Algorithms](algorithms/sorting.md)
-  * [Bitwise Operation](algorithms/bitwise-operation.md)
-* [System Design](system-design.md)
+# Data Stucutre and Algorithms
+
+- [Data Structures](./data-structures/data-structures-overview.md)
+  - [Linear List](./data-structures/linear-list.md)
+  - [String](./data-structures/string.md)
+  - [Binary Tree](./data-structures/binary-tree.md)
+  - [Tree](./data-structures/tree.md)
+  - [Graph](./data-structures/graph.md)
+- [Algorithms](./algorithms/algorithm-overview.md)
+  - [Complexity Analysis](./algorithms/complexity-analysis.md)
+  - [Algorithm Thinking](./algorithms/algorithm-thoughts.md)
+    - Divide and Conquer
+    - Backtracking
+    - Greedy
+    - Dynamic Programming
+  - [Searching Algorithms](./algorithms/searching-algorithms.md)
+    - Binary Search
+    - BFS
+    - DFS
+  - [Sorting Algorithms](./algorithms/sorting.md)
+  - [Bitwise Operation](./algorithms/bitwise-operation.md)

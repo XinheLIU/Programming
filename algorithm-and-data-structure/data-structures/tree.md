@@ -1,34 +1,30 @@
-# Tree
+# [tree](https://en.wikipedia.org/wiki/Tree_%28data_structure%29)
 
-### Concept
-
-[tree](https://en.wikipedia.org/wiki/Tree_%28data_structure%29)
-
-* Heap
-* Muti-way Search Tree
-  * B Tree, B+ Tree
-  * 2-3 Tree, 2-3-4 Tree
-* Binary Indexed Tree
-* Segment Tree
-* Trie
+- Heap
+- Muti-way Search Tree
+  - B Tree, B+ Tree
+  - 2-3 Tree, 2-3-4 Tree
+- Binary Indexed Tree
+- Segment Tree
+- Trie
 
 Binary Tree is **not** a tree strictly\(delete a left child, right child does not become left child\)
 
-* [Convert tree to binary tree](http://examradar.com/converting-m-ary-tree-general-tree-binary-tree/)
+- [Convert tree to binary tree](http://examradar.com/converting-m-ary-tree-general-tree-binary-tree/)
 
-### Trie
+## Trie
 
 [Trie](https://en.wikipedia.org/wiki/Trie)
 
-* Stores words in a file using common prefix
-  * using space complexity to exchange time complexity
-* Efficient in searching strings in a file
+- Stores words in a file using common prefix
+  - using space complexity to exchange time complexity
+- Efficient in searching strings in a file
 
-#### Common Operations
+Common Operations
 
-* Insert word
-* Search word 
-* Search prefix\(start with\)
+- Insert word
+- Search word 
+- Search prefix\(start with\)
 
 ```py
 class Trie(object):
@@ -59,6 +55,3 @@ class Trie(object):
             node = node[char] 
         return True
 ```
-
-
-
