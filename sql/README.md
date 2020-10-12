@@ -268,12 +268,12 @@ SQL has many standards, the mainstream ones are SQL92 and SQL99, 92 is simpler t
 
 &lt;window function&gt; OVER \[PARTITION BY\] &lt;column A&gt; ORDER BY&lt;column B&gt;\[DESC\]
 
-window function can be
+[window functions](https://mode.com/sql-tutorial/sql-window-functions/) can be
 
 - window functions
   - rank
-  - dense\_rank
-  - row\_number
+  - [dense\_rank](https://mode.com/sql-tutorial/sql-window-functions/#rank-and-dense_rank)
+  - [row\_number](https://mode.com/sql-tutorial/sql-window-functions/#row-number)
 - aggregators
   - sum, avg, count, max, min...
 
