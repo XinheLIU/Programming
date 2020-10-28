@@ -1,6 +1,7 @@
 # Data Manipulation and Controls in SQL
 
 - [Data Manipulation and Controls in SQL](#data-manipulation-and-controls-in-sql)
+  - [Commands to manipulate data](#commands-to-manipulate-data)
   - [Transactions](#transactions)
     - [Commands](#commands)
     - [auto commit](#auto-commit)
@@ -9,6 +10,18 @@
   - [Connect with Python](#connect-with-python)
     - [API Standards](#api-standards)
       - [ORM Framework](#orm-framework)
+
+## Commands to manipulate data
+
+- Alter <Table_name>
+  - add \<col\> <col_type>
+  - ADD PRIMARY KEY \<col\>
+    - ADD FROEIGN KEY ... references ...
+  - drop \<col\>
+  - change \<old_col\> \<new_col>
+  - modify \<col\> \<col_type\>
+- UPDATE <table> SET <col> = ... WHERE ...
+- DELETE FROM <table> WHERE ...
 
 ## Transactions
 

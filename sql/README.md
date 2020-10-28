@@ -257,7 +257,7 @@ SQL has many standards, the mainstream ones are SQL92 and SQL99, 92 is simpler t
     - often use UNION ALL + condition
 - NATURAL JOIN
 - JOINS
-  - ![SQL Joins](/assets/SQLJoins.png)
+  - ![SQL Joins](./assets/SQLJoins.png)
 
 ## CASE Statement
 

@@ -11,8 +11,15 @@
     * NOT NULL
     * DEFAULT
     * CHECKa
-* INSERT &lt;table&gt; \(&lt;columns&gt;\) VALUES\(&lt;values&gt;\)
-* DROP TABLE IFEXISTS &lt;table&gt;
+    * PRIMARY KEY
+      * must be NOT NULL
+    * FOREIGN KEY \<col\> references \<table\>(\<col\>)
+      * in Oracle, just reference...
+* INSERT INTO &lt;table&gt; \(&lt;columns&gt;\) (&lt;values&gt;\)
+* DROP TABLE [IFEXISTS &lt;table&gt;]
+* TRUNCATE TABLE <table_name>
+  * table will continue to exist, all data will be cleaned
+* CREATE INDEX <index_name> ON <table_name> (<col_names>)
 
 ```SQL
 DROP TABLE IF EXISTS `player`;
