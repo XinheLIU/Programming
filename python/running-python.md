@@ -1,63 +1,146 @@
-### Python Interpreters
+# Running Python
 
-* Cpython
-  * default python intepreter
-* Ipython
-  * interactive
-* Pypy
-  * [difference between PyPy and Cpython](https://pypy.readthedocs.io/en/latest/cpython_differences.html)
-* JPython
-  * on Java platform and translate to java bytecode
-* IronPython
-  * .Net platform, translate to bytecodes
+- [Running Python](#running-python)
+  - [Python Interpreters](#python-interpreters)
+  - [IDEs](#ides)
+  - [Editors](#editors)
+  - [Python Tools](#python-tools)
+    - [Virtual Environment](#virtual-environment)
+  - [Ipython](#ipython)
+    - [Features](#features)
+      - [Magic Commands](#magic-commands)
+    - [Advanced Features](#advanced-features)
+  - [Jupyter Notebook](#jupyter-notebook)
 
-### IDEs
+## Python Interpreters
 
-* VS Code
-* PyCharm
+- Cpython
+  - default python intepreter
+- Ipython
+  - interactive
+- Pypy
+  - [difference between PyPy and Cpython](https://pypy.readthedocs.io/en/latest/cpython_differences.html)
+- JPython
+  - on Java platform and translate to java bytecode
+- IronPython
+  - .Net platform, translate to bytecodes
 
-### Editors
+## IDEs
 
-* [Vim](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
-  * [Full stack python with Vim](https://www.fullstackpython.com/vim.html)
-* [Emacs](https://realpython.com/emacs-the-best-python-editor/)
+- VS Code
+- PyCharm
 
-### Python Tools
+## Editors
 
-* virtualenv
-* pip
-  * install [third-party packages](https://pypi.org/)
-  * pip3 on Mac and Linux
-* conda
-* Anaconda
-* kernel
+- [Vim](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
+  - [Full stack python with Vim](https://www.fullstackpython.com/vim.html)
+- [Emacs](https://realpython.com/emacs-the-best-python-editor/)
+
+## Python Tools
+
+- pip
+  - install [third-party packages](https://pypi.org/)
+  - pip3 on Mac and Linux
+- [conda](https://docs.conda.io/en/latest/)
+- Anaconda
+  - suggestion: use [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+- kernel
 
 python3 -m ipykernel install --user --name=py3
 
-## Virtual Environment
+### Virtual Environment
 
 Create independent and clean running environment
 
-```bash
-$ pip3 install virtualenv
-Mac:~ michael$ mkdir myproject
-Mac:~ michael$ cd myproject/
-Mac:myproject michael$
-Mac:myproject michael$ virtualenv --no-site-packages venv
-Using base prefix '/usr/local/.../Python.framework/Versions/3.4'
-New python executable in venv/bin/python3.4
-Also creating executable in venv/bin/python
-Installing setuptools, pip, wheel...done.
-Mac:myproject michael$ source venv/bin/activate
-(venv)Mac:myproject michael$
-(venv)Mac:myproject michael$ pip install jinja2
-...
-Successfully installed jinja2-2.7.3 markupsafe-0.23
-(venv)Mac:myproject michael$ python myapp.py
-...
-(venv)Mac:myproject michael$ deactivate 
-Mac:myproject michael$ 
-```
+- use virtualenv
+- use python
 
+## Ipython
 
+### Features
 
+- Tab completion &lt;Tab&gt;
+  - tab after command
+  - object.&lt;tab&gt;
+- introspection \(?\) operator after a variable \(object\)
+  - ?? show more if possible
+- Terminal Shortcuts
+  - follow **Emacs*- keys and Linux shell keys
+  - Ctrl + Shift + V paste from clipboard
+- Command Line history
+  - Ctrl + P \(Up\), Ctrl + N \(Down\) : previous or next history \(by %run\) 
+  - \__ \_and \_\_ stored previous two commands,
+    - \_&lt;n&gt; stores previous nth output
+    - \_i&lt;n&gt; previous nth input
+      - eval\(\_i27\)
+
+#### [Magic Commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
+
+- %run, %load
+  - -d use debugger
+    - c\(continue\), s\(step\)
+    - !&lt;var&gt; to view variables
+    - [debugger commands](https://docs.python.org/2.0/lib/debugger-commands.html)
+  - -p 
+- %prun - Execute with c profile statement
+  - %paste, %cpaste
+  - %%prun - profile code block
+- %lprun - line profiler
+  - uses line\_profiler
+  - %lprun -f func1 -f func2 &lt;statement to profile&gt;
+- %quickref, %magic - documentation
+- %who, who\_ls whos
+  - display variable
+- %xdel &lt;variable&gt;
+  - %reset - delete all variables
+- % pdb - use **pdb **to debug
+  - %debug : drops you to the stack frame after error is thrown
+    - u and d to shift levels
+- %page Object
+  - pretty print object
+- %time, %timeit &lt;statement&gt;
+  - time time once, timeit takes multiple runs and average
+- command line ones
+  - !&lt;cmd&gt;
+    - cmd in system shell
+    - can combine with current python variables with $
+      - ```py
+        foo = 'test*' # wildcard
+        !ls $foo
+        ```
+  - %alias &lt;alias\_name&gt; &lt;cmd&gt;
+    - give command alias
+  - %pwd
+  - %bookmark &lt;name&gt; &lt;dir&gt;
+    - -b: override and use bookmark location
+    - -l: list all bookmarks
+  - %cd
+    - %pushd, %popd
+  - %dirs
+  - %ddhist
+    - history of visited directories
+  - %env
+    - environmental variables
+- Matplotlib
+  - %matplotlib: configure matplotlib options
+    - %matplotlib inline
+
+### Advanced Features
+
+- Ipython-Friendly Class
+  - \_\__repr\_\_ _methods
+- Profiles and [Configuration](https://www.google.com/search?q=create+ipython+config&oq=create+ipython+config&aqs=chrome..69i57j0l2.6031j0j4&sourceid=chrome&ie=UTF-8)
+  - _.ipython/profile\_default/ipython\_config.py_
+  - .jupyter/
+  - ipython --profile=&lt;profile&gt;
+
+## Jupyter Notebook
+
+- Running on cloud now
+  - [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true)
+  - [Binder](https://gke.mybinder.org/)
+- Local Run
+  - [Install](https://jupyter.org/install.html)
+  - [Run](https://jupyter.readthedocs.io/en/latest/running.html#running)
+- [Config Jupyter](https://jupyter-notebook.readthedocs.io/en/stable/config_overview.html)
+  - jupyter notebook --config=...
