@@ -6,7 +6,7 @@ A "Programmer" can be a path to any professional or non-professional user that w
   - Discrete Mathematics
   - Quantitative Methods
     - Numerical Methods
-- [Data Structure and Algorithms](./algorithm-and-data-structure/ReadMe.md)
+- [Data Structure and Algorithms](./algorithm-and-data-structure/README.md)
 - Proramming
   - [Programming Paradigms](./programming-basics.md)
   - Several Languages
