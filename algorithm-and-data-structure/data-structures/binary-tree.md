@@ -1,7 +1,10 @@
-# Binary Tree
+# Tree
 
-- [Binary Tree](#binary-tree)
-  - [Basic Concept](#basic-concept)
+## Binary Tree
+
+- [Tree](#tree)
+  - [Binary Tree](#binary-tree)
+    - [Basic Concept](#basic-concept)
     - [Properties](#properties)
     - [Time Complexity](#time-complexity)
     - [Implementation](#implementation)
@@ -10,12 +13,11 @@
   - [Binary Search Tree](#binary-search-tree)
     - [Concept](#concept)
   - [Self-Balancing Binary Search Tree](#self-balancing-binary-search-tree)
-  - [Heap/Priority Queue](#heappriority-queue)
-    - [Common Forms](#common-forms)
+  - [Heap) & [Priority Queue](https://en.wikipedia.org/wiki/Priority_queue)](#heap--priority-queue)
 
 most important recursively defined data structure
 
-## Basic Concept
+### Basic Concept
 
 - node, parent, ancestor, brother, left-most, right-most
 - leaf and branch
@@ -142,10 +144,9 @@ Engineering Usage
   - Treap
   - Splay Tree
 
+## [Heap](https://en.wikipedia.org/wiki/Heap_(data_structure)) & [Priority Queue](https://en.wikipedia.org/wiki/Priority_queue)
 
-## Heap/Priority Queue
-
-Features
+Features of Binomial Heap
 
 - Heap is a tree structure \(conceptually\) with ordering rule
   - if the ordered direct children &gt;= \(&lt;=\) parent, it called min \(max\) heap
@@ -154,14 +155,20 @@ Features
 - usually implemented as a **priority queue**
   - other implementations include max tree, HBLT, WBLT, MaxWBLT
 
-### Common Forms
+Common Forms
 
 - Min heap
 - Max Heap
-- Priority Queue
-- Fibonacci Heap
-- Binary Heap
+- [Priority Queue](https://en.wikipedia.org/wiki/Priority_queue)
 
+Different Forms of [Heap](https://en.wikipedia.org/wiki/Heap_(data_structure))s
+
+- [Fibonacci Heap](https://en.wikipedia.org/wiki/Fibonacci_heap)
+- Pairing Heap
+- Brodal
+- Rank-pairing
+- 2-3 Heap
+  
 Implementation
 
 Operations
@@ -178,16 +185,16 @@ class BinHeap:
       self.currentSize = 0
 
     def __minChild(self,i):
-      if i - 2 + 1 > self.currentSize:
-        return i - 2
+      if i * 2 + 1 > self.currentSize:
+        return i * 2
       else:
         if self.heapList[i-2] < self.heapList[i-2+1]:
-          return i - 2
+          return i * 2
         else:
-          return i - 2 + 1
+          return i * 2 + 1
 
     def shiftDown(self,i):
-      while (i - 2) <= self.currentSize:
+      while (i * 2) <= self.currentSize:
         mc = self.__minChild(i)
         if self.heapList[i] > self.heapList[mc]:
           self.heapList[mc], self.heapList[i] = self.heapList[i], self.heapList[mc]
@@ -197,7 +204,7 @@ class BinHeap:
       while i // 2 > 0:
         if self.heapList[i] < self.heapList[i // 2]:
           self.heapList[i // 2], self.heapList[i]  = self.heapList[i], self.heapList[i // 2]
-        i = i // 2
+        i //= 2
 
     def insert(self,k):
       self.heapList.append(k)
@@ -207,18 +214,18 @@ class BinHeap:
     def delMin(self):
       retval = self.heapList[1]
       self.heapList[1] = self.heapList[self.currentSize]
-      self.currentSize = self.currentSize - 1
+      self.currentSize -= 1
       self.heapList.pop()
       self.shiftDown(1)
       return retval
 
-    def buildHeap(self,alist):
+    def heapify(self,alist):
       i = len(alist) // 2
       self.currentSize = len(alist)
       self.heapList = [0] + alist[:]
       while (i > 0):
         self.shiftDown(i)
-        i = i - 1
+        i -= 1
 ```
 
 Container Implementation

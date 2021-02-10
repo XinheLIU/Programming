@@ -3,12 +3,14 @@
 - [Linear List](#linear-list)
   - [Array](#array)
   - [Linked List](#linked-list)
-    - [Compare with Array](#compare-with-array)
+    - [Linked List vs. Array](#linked-list-vs-array)
   - [Skip List](#skip-list)
   - [Hash Table](#hash-table)
     - [Hash Collision)](#hash-collision)
   - [Stack](#stack)
+    - [Use Stack In Engineering](#use-stack-in-engineering)
   - [Queue](#queue)
+    - [Use Queue In Engineering](#use-queue-in-engineering)
   - [Bloom Filter](#bloom-filter)
   - [Cache](#cache)
 
@@ -19,7 +21,8 @@ Features
 - continuous storage
   - CPU cache friendly
 - fixed storage
-  - out of memory error \(C/C++ needs boundary check\)
+  - out of memory error
+    - e.g. C/C++ needs boundary check
   - dynamic allocation is expansive
 
 Time Complexity
@@ -27,9 +30,7 @@ Time Complexity
 - Random Access O\(1\)
 - Insert/Delete O\(n\)
 
-Implementation
-
-Operations
+Common Operations
 
 - Construct
 - Destruct/Clear
@@ -38,23 +39,27 @@ Operations
 - Delete
 - Change
 - Sort
-- Search\(getPos, GetValue\)
+- Search
+  - getPos, getValue
 - Merge two sorted array
 
 Container Implementations
 
 - **Dynamic Memory Allocation** could be slow
 - Encapsulate common operations
-- [ArrayList](http://developer.classpath.org/doc/java/util/ArrayList-source.html)\(Java\), vector\(C++\)
+- [ArrayList](http://developer.classpath.org/doc/java/util/ArrayList-source.html)\(Java\) and vector\(C++\)
   - Limit Checking
   - Implement an array with dynamic storage
   - implement a fixed memory array with dynamic insert and delete
-- Pros and Cons of usage
-  - different storage type
-    - Java ArrayList con only store _Integer, Long, not atomic types\(primitive types\) like \_int, long_
-  - performance
-    - **container is slower**
-      - auto-boxing, unboxing in Java
+- list in Python
+  
+Pros and Cons
+
+- Pro-different storage type
+  - Java ArrayList con only store _Integer, Long, not atomic types\(primitive types\) like \_int, long_
+- Con-performance
+  - **container is slower**
+    - auto-boxing, unboxing in Java
 
 ## Linked List
 
@@ -108,7 +113,6 @@ Container Implementations
 
 [Java](http://developer.classpath.org/doc/java/util/LinkedList-source.html)
 
-
 Use In Engineering
 
 - [Cache Replacement](https://en.wikipedia.org/wiki/Cache_replacement_policies)
@@ -116,20 +120,22 @@ Use In Engineering
   - Least Recent Used\(LRU\)
   - FIFO
 
-### Compare with Array
+### Linked List vs. Array
 
-- Pros
-  - Dynamic Memory Allocation easier, Array is easier to out of memory
-  - Can frequently insert in the middle
-  - Visibility and flexibility - do not require to know the size, building blocks for other data types
-  - Being able to model the linked based relationship directly. 
-- Cons
-  - Random Access is hard
-  - Array can take advantage of CPU Cache, be visited faster
-  - Hard memory management, more expensive in memory
-    - frequent Garbage Collection in Java
-    - not friendly to cache, more memory pieces
+Pros
 
+- Dynamic Memory Allocation easier, Array is easier to go out of memory
+- Can frequently insert in the middle
+- Visibility and flexibility - do not require to know the size, can be building blocks for other data types
+- Being able to model the linked based relationship directly.
+  
+Cons
+
+- Random Access is hard
+- Array can take advantage of CPU Cache, be visited faster
+- Hard memory management, more expensive in memory
+  - frequent Garbage Collection in Java
+  - not friendly to cache, more memory pieces
 
 ## Skip List
 
@@ -145,7 +151,6 @@ Time Complexity
 Implementation
 
 [Redis](https://stackoverflow.com/questions/45115047/why-redis-sortedset-uses-skip-list-instead-of-balanced-tree)
-
 
 ## [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
 
@@ -212,7 +217,7 @@ Implementation
 
 with array or with linked list
 
-Operations
+Common Operations
 
 - Push
 - Pop
@@ -220,18 +225,17 @@ Operations
 
 Container Implementations
 
-In production, always choose **Deque **for both stack and queue
+In production, always choose **Deque** for both stack and queue
 
 - [Java](http://fuseyism.com/classpath/doc/java/util/Queue-source.html)
 - [Python](https://docs.python.org/2/library/collections.html)
 
-Use In Engineering
+### Use Stack In Engineering
 
-- Browser, go back go forward
+- Browser, go back, go forward
 - function call stack
-- Parser 
+- Parser
   - expression calculate value
-
 
 ## Queue
 
@@ -258,13 +262,12 @@ Operations
 
 Container Implementation
 
-In production, always choose **Deque **for both stack and queue
+In production, always choose **Deque** for both stack and queue
 
-[Java](http://fuseyism.com/classpath/doc/java/util/Queue-source.html)
+- [Java](http://fuseyism.com/classpath/doc/java/util/Queue-source.html)
+- [Python](https://docs.python.org/2/library/collections.html)
 
-[Python](https://docs.python.org/2/library/collections.html)
-
-Use In Engineering
+### Use Queue In Engineering
 
 Widely used in system, middleware, and frameworks
 
@@ -274,8 +277,8 @@ Widely used in system, middleware, and frameworks
   - a consumer - producer model
     - take will be blocked if empty
 - Concurrent Queue
-  - add lock on enqueue\(\), dequeue\(\) methods 
-  - performance - use array circular queue 
+  - add lock on enqueue\(\), dequeue\(\) methods
+  - performance - use array circular queue
     - CAS \(compare and set \) atomic operation
 - Examples
   - Linux Cycle Memory

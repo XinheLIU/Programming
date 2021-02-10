@@ -4,6 +4,10 @@
   - [Introduction to Tensorflow](#introduction-to-tensorflow)
     - [Tensorflow 2.0](#tensorflow-20)
       - [Core Modules](#core-modules)
+        - [tf.keras](#tfkeras)
+        - [tf.data](#tfdata)
+        - [tf.distribute](#tfdistribute)
+        - [saved model](#saved-model)
   - [Basics](#basics)
       - [Graph](#graph)
       - [Session](#session)
@@ -21,7 +25,7 @@
 ## Introduction to Tensorflow
 
 - Tensorflow Modules and APIs
-  - Python, C++, Go, Java supported![](/assets/TFModuleAndAPIs.png)
+  - Python, C++, Go, Java supported
 - a **declarative** language \(vs. imperative\)
   - use functions to express mathematical modules, use functions as computation units
 - a graph-based computation model
@@ -78,14 +82,14 @@ Upgraded from Tensorflow 1.0, TF2.0
 
 ![TF2.0](https://1.bp.blogspot.com/-WjLM9EekTc0/XbMVcaee1qI/AAAAAAAAJJs/TYZ9x3o7A4QHxlui3pZS_nS5DKQPWo3kACNcBGAsYHQ/s1600/0_C7GCWYlsMrhUYRYi.png)
 
-tf.keras
+##### tf.keras
 
 - high level API
 - supports SavedModel
 - Eager Execution
 - Distributed Training
 
-tf.data
+##### tf.data
 
 supports
 
@@ -100,9 +104,9 @@ supports
   - py_function
   - resampling
 
-[tf.distribute](https://www.tensorflow.org/api_docs/python/tf/distribute)
+##### [tf.distribute](https://www.tensorflow.org/api_docs/python/tf/distribute)
 
-saved model
+##### saved model
 
 - use Protobuff for seralization
 - supports training and deployment

@@ -52,8 +52,15 @@ python3 -m ipykernel install --user --name=py3
 
 Create independent and clean running environment
 
-- use virtualenv
-- use python
+- use [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html)
+  - [pipenv and virtualenv](https://docs.python-guide.org/dev/virtualenvs/)
+- [use conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+  - conda create -name
+  - conda activate
+  - conda-env
+    - list
+    - create
+  - conda activate
 
 ## Ipython
 
@@ -134,13 +141,22 @@ Create independent and clean running environment
   - .jupyter/
   - ipython --profile=&lt;profile&gt;
 
-## Jupyter Notebook
+## Jupyter
 
-- Running on cloud now
+- Running on cloud alternatives
   - [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true)
   - [Binder](https://gke.mybinder.org/)
 - Local Run
   - [Install](https://jupyter.org/install.html)
   - [Run](https://jupyter.readthedocs.io/en/latest/running.html#running)
 - [Config Jupyter](https://jupyter-notebook.readthedocs.io/en/stable/config_overview.html)
-  - jupyter notebook --config=...
+  - jupyter lab --config=...
+  - jupyter notebook...
+
+## Docker
+
+- for windows, use [kitematic]
+- Pure docker: Guide for [windows](https://docs.docker.com/docker-for-windows/), [linux](https://docs.docker.com/engine/installation/), or [macOS](https://docs.docker.com/docker-for-mac/).
+- If you want to use your GPU make sure you have [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) and [NVidia driver](https://www.nvidia.com/en-us/drivers/unix/) + [CUDA 10.2](https://developer.nvidia.com/cuda-downloads) installed
+
+
