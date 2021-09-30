@@ -9,11 +9,10 @@ A "Programmer" can be a path to any professional or non-professional user that w
 - [Data Structure and Algorithms](./algorithm-and-data-structure/README.md)
 - Proramming
   - [Programming Paradigms](./programming-basics.md)
-  - Several Languages
-    - [C and C++](./c++/Readme.md)
-    - [Java](java.md)
-    - [Python](./python/Readme.md)
-    - [Go](go.md)
+  - [Python](./python/README.md)
+  - [C and C++](./c++/Readme.md)
+  - [Java](java.md)
+  - [Go](go.md)
   - [Web Programming](web.md)
     - Front-end
       - HTML, CSS, Bootstrap

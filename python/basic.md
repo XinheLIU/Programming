@@ -1,4 +1,4 @@
-## Basic Grammars
+# Basic Grammars
 
 * Indentation Language, "/" to change line \(or use\(\),""\)
 * comment \#
@@ -11,11 +11,15 @@
       e = 4 # local variable 
       print(a)
   ```
-* all variables assigned by **reference **
+* all variables assigned by **reference**
   * ```py
     [[0] * 2 for _ in range(2)] != [[0]*2]*2
+    # assign by tuples
+    a, b = 1, 2
     ```
 * support +=, ^=, &lt;&lt;= ...
+* [keywords](https://docs.python.org/3/reference/lexical_analysis.html#keywords): notations cannot used by other objectes
+* Expressions
 
 ### Operations
 

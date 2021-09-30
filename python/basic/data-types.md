@@ -1,6 +1,16 @@
-## Python built-in types
+# Python built-in types
 
-[Implemented in C](https://github.com/python/cpython/tree/949fe976d5c62ae63ed505ecf729f815d0baccfc)
+- [Python built-in types](#python-built-in-types)
+  - [Sequence Types](#sequence-types)
+    - [Common Operations](#common-operations)
+    - [Methods of sequences](#methods-of-sequences)
+      - [private methods](#private-methods)
+    - [**str**](#str)
+    - [**List**](#list)
+    - [Set and Frozen Set](#set-and-frozen-set)
+
+
+Most Data Types are [Implemented in C](https://github.com/python/cpython/tree/949fe976d5c62ae63ed505ecf729f815d0baccfc)
 
 * Almost anything \(function and data\) in Python is an object \(all things in HEAP\)
   * id\(\)
