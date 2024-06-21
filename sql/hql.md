@@ -11,8 +11,6 @@
     - [API Standards](#api-standards)
       - [ORM Framework](#orm-framework)
 
-DCL (Data Control Language): DCL is used to confirm or cancel changes made to the data in the database. Additionally, it can be used to set whether users of the RDBMS have the permissions to operate on objects within the database (such as database tables).
-
 ## Commands to manipulate data
 
 - Alter <Table_name>

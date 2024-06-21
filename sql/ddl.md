@@ -2,7 +2,7 @@
 
 ## Create Tables
 
-* CREATE TABLE &lt;name&gt; \(&lt;initialization list\(col name, type, &lt;\(not\)NULL or Key Type&gt;\)
+* CREATE TABLE \<name\> (IF NOT EXISTS) \<column specs\>
   * CREATE TEMPORARY TABLE ..
   * table is gone when session ends
   * more settings for indexing, storage enginee, etc
@@ -17,6 +17,7 @@
       * in Oracle, just reference...
 * INSERT INTO &lt;table&gt; \(&lt;columns&gt;\) (&lt;values&gt;\)
 * DROP TABLE [IFEXISTS &lt;table&gt;]
+* ALTER 
 * TRUNCATE TABLE <table_name>
   * table will continue to exist, all data will be cleaned
 * CREATE INDEX <index_name> ON <table_name> (<col_names>)
@@ -54,7 +55,7 @@ in most cases, use GUIs to create data tables first \(eg. Navicat\)
 * 2nd Normal Form
   * not have any **non-prime attribute** that is functionally dependent\(constraint between two sets of attributes\) or any proper subset of any candidate key of a relation.
 * 3rd Normal Form
-  * no **non-prime \(non-key\) attribute** is **transitively dependent** of any key. \(no non-prime attribute dependes on the non prime attributes, all the non prime attributes must depend on the primary key only\)
+  * no **non-prime (non-key) attribute** is **transitively dependent** of any key. (no non-prime attribute dependes on the non prime attributes, all the non prime attributes must depend on the primary key only)
 
 Examine common bugs/errors when designing data tables
 

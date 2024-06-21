@@ -9,7 +9,7 @@ A "Programmer" can be a path to any professional or non-professional user that w
 - [Data Structure and Algorithms](./algorithm-and-data-structure/README.md)
 - Proramming
   - [Programming Paradigms](./programming-basics.md)
-  - [Python](./python/README.md)
+  - [Python](https://github.com/XinheLIU/MachineLearning)
   - [C and C++](./c++/Readme.md)
   - [Java](java.md)
   - [Go](go.md)
